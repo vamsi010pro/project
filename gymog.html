@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>wake eat gym sleep</title>
+           <!-- intl-tel-input CSS (must come before your CSS) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+ <style>
+        body.light-mode { 
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: #ffffff;
+        }
+    </style>
+<!-- your CSS (use absolute path so it loads regardless of current URL) -->
+<link rel="stylesheet" href="/gym.css">
+<!-- Minimal fallback styles to ensure the page is usable even if the external CSS fails to load -->
+<style>
+  body { background: var(--bg-color, #fff); color: var(--text-color, #000); font-family: Arial, Helvetica, sans-serif; margin:0; }
+  .nav{ display:flex; gap:0.5rem; padding:0.5rem 1rem; position:fixed; top:1rem; left:10%; width:80%; z-index:1000; }
+  .auth-links{ text-align:right; padding:8px 16px; }
+  .banner .Template{ max-width:100%; display:block; }
+</style>
+    </head>
+      <body class="light-mode">
+        <script>
+            // Check for saved theme in localStorage
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.classList.remove('light-mode', 'dark-mode');
+            document.body.classList.add(savedTheme + '-mode');
+
+            // Toggle theme function
+            function toggleTheme() {
+                if (document.body.classList.contains('light-mode')) {
+                    document.body.className = 'dark-mode';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.body.className = 'light-mode';
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+
+            // Event listener for the toggle switch
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeToggle = document.getElementById('themeToggle');
+                themeToggle.checked = savedTheme === 'dark';
+                themeToggle.addEventListener('change', toggleTheme);
+            });
+        </script>
+
+        <div class="nav" id="nav1">
+           <div class="v">
+    <!-- Toggle -->
+    <label class="theme-switch">
+      <input type="checkbox" class="theme-switch__checkbox" id="themeToggle">
+      <div class="theme-switch__container">
+        <div class="theme-switch__clouds"></div>
+        <div class="theme-switch__stars-container">
+          <!-- stars svg -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+            <path fill="currentColor" d="M135.831..."></path>
+          </svg>
+        </div>
+        <div class="theme-switch__circle-container">
+          <div class="theme-switch__sun-moon-container">
+            <div class="theme-switch__moon">
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+    </div>
+            <button class="home" id="home">HOME</button>
+            <button class="home" id="ser">SERVICES</button>
+            <button class="home">ABOUT</button>
+            <button class="home" id="packs">PACKAGES</button>
+            <button class="home" id="con">CONTACT</button>
+            <button class="home" id="bran">BRANCHES</button>
+        </div>
+
+        <div class="auth-links" style="text-align:right;padding:8px 16px;">
+            <a href="/logout">Logout</a> &nbsp;|&nbsp; <a href="/login">Login</a>
+        </div>
+
+        <div class="customercarenum" >
+            <a href="dialpad.com" target="_blank">
+            <img class="ccn" src="/images/icons8-online-support.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'" alt="support">
+            </a>
+        </div>
+        <div class="banner">
+            <img class="Template" src="/images/fitness-template.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'" alt="template">
+
+            <div class="bu">
+        <a href="https://www.instagram.com/" target="_blank">
+            <button class="joinnow">join now</button>
+            </a>
+    </div>
+        </div>
+
+        <section class="gallery-section" aria-label="Highlights">
+          <h2 style="text-align:center;margin:1rem 0">Highlights</h2>
+          <div class="gallery" id="gallery"></div>
+          <style>
+            .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; padding:0 1rem; margin-bottom:1rem; }
+            .gallery img { width:100%; height:120px; object-fit:cover; border-radius:8px; border: 2px solid rgba(0,0,0,0.06); }
+          </style>
+          <script>
+            const galleryImages = ['strength','cardio','high-intensity','squat','chest-bench','workout-the-rock','db-row','deadlift','functional-training'];
+            const g = document.getElementById('gallery');
+            galleryImages.forEach(name => {
+              const img = document.createElement('img');
+              img.src = `/images/${name}.svg`;
+              img.alt = name;
+              img.onerror = function(){ this.onerror=null; this.src='/images/placeholder.svg'; }
+              g.appendChild(img);
+            });
+          </script>
+
+         <p class="heading1" id="bes">BASIC EXERCISES</p>
+           <div class="exercises" id="exe">
+            <div class="swo">
+                <img class="swoimg" src="/images/strength.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+            <div class="strenghtworkout">STRENGTH WORKOUT</div>
+            </div>
+            <div class="cvt">
+                <img class="cvtimg" src="/images/cardio.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+            <div class="Cardiovasculartraining">CARDIO VASCULAR TRAINING</div>
+            </div>
+            <div class="hit">
+                <img class="hitimg" src="/images/high-intensity.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+            <div class="High-intensityintervaltraining">HIGH-INTENSITY INTERVEL TRAINING</div>
+            </div>
+            <div class="sq">
+                <img class="sqimg" src="/images/squat.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+            <div class="Squats">SQUATS</div>
+            </div>
+            <div class="bp">
+                <img class="bpimg" src="/images/chest-bench.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                <div class="Benchpress">BENCH PRESS</div>
+                </div>
+                <div class="pu">
+                    <img class="puimg" src="/images/workout-the-rock.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                <div class="Pull-ups">Pull-ups</div>
+                </div>
+                <div class="bdr">
+                 <img class="bdrimg" src="/images/db-row.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                <div class="Bentovertwo-dumbbellrow">Bent over two-dumbbell row</div>
+                </div>
+                <div class="be">
+                    <img class="beimg" src="/images/balance.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                <div class="Balanceexercises">Balance exercises</div>
+                </div>
+                <div class="dlift">
+                    <img class="dliftimg" src="/images/deadlift.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                    <div class="Deadlift">Deadlift</div>
+                    </div>
+                    <div class="ft">
+                        <img class="ftimg" src="/images/functional-training.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+                    <div class="Functionaltraining">Functional training</div>
+                    </div>
+     </div>
+<script>
+document.getElementById('bes').onclick = function() {
+    document.getElementById('exe').scrollIntoView({ behavior: 'smooth' });
+};
+document.getElementById('home').onclick = function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+};
+document.getElementById('con').onclick = function(){
+    document.getElementById('conus').scrollIntoView({behavior:'smooth'});
+};
+document.getElementById('packs').onclick = function(){
+   document.getElementById('ph').scrollIntoView({behavior:'smooth'});
+};
+document.getElementById('ser').onclick = function(){
+    document.getElementById('services').scrollIntoView({behavior:'smooth'})
+};
+document.getElementById('bran').onclick = function(){
+  document.getElementById('bra').scrollIntoView({behavior:'smooth'});
+};
+</script>
+  <p class="branches" id="bra">OUR BRANCHES</p>
+    <div class="branchitems">
+        <div class="nrpm">
+            <img class="nrpmimg" src="/images/nrpm.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        <div class="div1">NARSIPATNAM</div>
+        </div>
+        <div class="anak">
+            <img class="anakimg" src="/images/anakapalli.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        <div class="div1">ANAKAPALLI</div>
+        </div>
+        <div class="vizag">
+            <img class="vizagimg" src="/images/vizag.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+            <div class="div1">VIZAG</div>
+            </div>
+            <div class="div1">GUNTUR</div>
+                <div class="div1">VIJYAWADA</div>
+                <div class="div1">KODURU</div>
+                    <div class="div1">HYDERABAD</div>
+                    <div class="div1">TUNI</div>
+                        <div class="div1">TIRUPATHI</div>
+                        <div class="div1">MUMBAI</div>
+  </div>
+   <div class="contact" id="conus">CONTACT US</div>
+  <div class="contactinfo">
+    <label class="name">name:</label>
+    <input class="nameinput" type="text" placeholder="enter your name">
+
+    <label class="email">email:</label>
+    <input class="emailinput" type="email" placeholder="enter your email">
+
+    <label class="phonenum">phone number:</label>
+    <input id="phone" class="phinput" type="tel" placeholder="enter your phone number">
+
+    <button class="submit" id="but" type="button">submit</button>
+
+    <p class="ss" id="successMsg" style="display:none;">
+      submitted succeessfully !
+    </p>
+       <div class="socialmedia">
+        <a href="https://www.facebook.com/" target="_blank">
+        <img class="fb" src="/images/icons8-facebook-circled.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+        <img class="insta" src="/images/icons8-instagram.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        </a>
+        <a href="https://www.twitter.com/" target="_blank">
+        <img class="twit" src="/images/icons8-twitter-bird.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        </a>
+        <a href="https://www.youtube.com/" target="_blank">
+        <img class="yt" src="/images/icons8-youtube.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        </a>
+        <p class="cc">
+        call us: 8008701388<br>
+        address: 9-179-1, ramaraopeta street , narsipatnam,531116, india <br>
+        email:boddetipurnachinnavamsi@gmail.com<br>
+        location: <a class="c" href="https://www.google.com/maps/place/Narsipatnam,+Andhra+Pradesh/@17.6802083,82.5587871,12z/data=!3m1!4b1!4m5!3m4!1s0x3a39f4d2f6e2f6b7:0x7d8a5c8e4e4e4e4e!8m2!3d17.6802029!4d82.6587822" target="_blank">click here</a><br>
+        </p>
+  </div>
+  <!-- intl-tel-input JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+<script>
+  // Initialize intl-tel-input on #phone
+  const phoneInputField = document.querySelector("#phone");
+  const iti = window.intlTelInput(phoneInputField, {
+    initialCountry: "auto",
+    geoIpLookup: function (success, failure) {
+      fetch("https://ipapi.co/json")
+        .then((res) => res.json())
+        .then((data) => success(data.country_code))
+        .catch(() => success("us"));
+    },
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js", // formatting
+  });
+</script>
+
+
+  <script>
+    const submitBtn = document.getElementById("but");
+    const successMsg = document.getElementById("successMsg");
+
+    submitBtn.addEventListener("click", function () {
+      document.querySelector(".nameinput").value = "";
+      document.querySelector(".emailinput").value = "";
+      document.querySelector("#phone").value = "";
+
+      successMsg.style.display = "block";
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3000);
+    });
+  </script>
+</div>
+   
+
+
+<div class="packages">
+    <div class="pack11">
+        <img class="pack1img" src="/images/gold.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        <p class="gold">GOLD MEMBERSHIP</p>
+        <div class="pack1"></div>
+        </div>
+
+
+    <div class="pack22">
+        <img class="pack2img" src="/images/platinum.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        <p class="silver">SILVER MEMBERSHIP</p>
+        <div class="pack2"></div>
+    <div class="pack2"></div>
+     </div>
+
+    <div class="pack33">
+        <img class="pack3img" src="/images/platinum.svg" onerror="this.onerror=null;this.src='/images/placeholder.svg'">
+        <p class="gold"> GRAY MEMBERSHIP</p>
+    <div class="pack3"></div>
+</div>
+  <p class="packhead" id="ph">OUR PACKAGES</p>
+</div>
+
+
+<p class="heading">OUR SERVICES</p>
+<div class="services" id="services">
+  <div>
+    <img class="srvimg" src="personal training.gif" alt="Personal Training">
+    <h3>PERSONAL TRAINING</h3>
+    <p>One-on-one sessions with certified trainers tailored to your goals.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="gc.gif" alt="Group Classes">
+    <h3>GROUP CLASSES</h3>
+    <p>Yoga, Zumba, CrossFit, HIIT, Aerobics, and Dance Fitness programs.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="str&con.gif" alt="Strength & Conditioning">
+    <h3>STRENGTH & CONDITIONING</h3>
+    <p>Build muscle and power with weightlifting and bodybuilding workouts.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="cardio.gif" alt="Cardio Training">
+    <h3>CARDIO TRAINING</h3>
+    <p>Burn calories with treadmills, cycling, rowing, and boxing.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="funct.gif" alt="Functional Training">
+    <h3>FUNCTIONAL TRAINING</h3>
+    <p>Kettlebells, resistance bands, and agility drills for real-world strength.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="meals.gif" alt="Nutrition Plans">
+    <h3>NUTRITION & DIET PLANS</h3>
+    <p>Custom meal plans and consultations to support your fitness goals.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="assessments.gif" alt="Fitness Assessments">
+    <h3>FITNESS ASSESSMENTS</h3>
+    <p>Track progress with BMI, body composition, and strength tests.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="rehab.gif" alt="Rehabilitation">
+    <h3>REHABILITATION & RECOVERY</h3>
+    <p>Physiotherapy, stretching, and mobility training for injury prevention.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="online-coaching.gif" alt="Online Coaching">
+    <h3>ONLINE COACHING</h3>
+    <p>Virtual training sessions and remote fitness guidance.</p>
+  </div>
+
+  <div>
+    <img class="srvimg" src="specialized.gif" alt="Specialized Programs">
+    <h3>SPECIALIZED PROGRAMS</h3>
+    <p>Fat loss, muscle gain, and sports-specific training for all levels.</p>
+  </div>
+</div>
+
+    </body>
+</html>

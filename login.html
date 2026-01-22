@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login terminal</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="bd">
+    <div class="container">
+        <h1>Login</h1>
+        <div id="message" style="color:red;margin-bottom:8px"></div>
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input  class ="in" type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input class="in" type="password" id="password" name="password"><br><br>
+            <button class="submit" type="submit">Login</button>
+      
+             <!-- From Uiverse.io by SmookyDev -->
+<div class="tooltip">
+  <div class="icon">i</div>
+  <div class="tooltiptext">if you  forgetten your login credencials click it</div>
+</div>
+
+          <div class="tooltip1">
+  <div class="icon1">i</div>
+  <div class="tooltiptext1">if you are new to the terminal,plz click on this !!</div>
+</div>
+
+
+<!-- From Uiverse.io by Galahhad --> 
+ <div class="slider">
+<label class="popup">
+  <input type="checkbox">
+  <div class="burger" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="popup-window">
+    <legend>contact</legend>
+    <ul>
+      <li>
+        <a class="insta" href="https://www.instagram.com/p_ur_na010/" target="_blank">
+        <button>
+          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle r="4" cy="7" cx="9"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>instagram</span>
+        </button>
+        </a>
+      </li>
+      <li>
+        <button>
+          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          <span>facebook</span>
+        </button>
+      </li>
+      <hr>
+      <li>
+        <button href="">
+          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <rect ry="2" rx="2" height="13" width="13" y="9" x="9"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>+918008701388</span>
+        </button>
+      </li>
+      <li>
+        <button>
+          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+          </svg>
+          <span>boddetipurnachinnavamsi@gmail.com</span>
+        </button>
+      </li>
+      <hr>
+      <li>
+        <a class="maps button-link" href="https://maps.app.goo.gl/M5GkcFPgc2QFtcAi6" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank', 'noopener'); return false;">
+          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <line y2="18" x2="6" y1="6" x1="18"></line>
+            <line y2="18" x2="18" y1="6" x1="6"></line>
+          </svg>
+          <span>narsipatnam (main branch)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</label>
+</div>
+        </form>
+
+    <div class="links" style="margin-top:1rem;">
+      <a href="/register" class="passlink1">create new account ??</a>
+      <a href="#" class="passlink">forget password ??</a>
+    </div>
+
+    </div>
+
+<script>
+// Show simple error messages when ?error=1 is present and clear after 3s
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const err = params.get('error');
+  if (err) {
+    const msgEl = document.getElementById('message');
+    const msg = err === '1' ? 'Invalid credentials or an error occurred.' : 'An error occurred.';
+    msgEl.textContent = msg;
+    // clear message after 3 seconds
+    setTimeout(() => {
+      if (msgEl) msgEl.textContent = '';
+    }, 3000);
+  }
+})();
+</script>
+
+<script>
+// Maps link click handler: try to open in new tab, fallback to current tab and alert on failure
+(function(){
+  const maps = document.querySelector('.maps');
+  if (!maps) return;
+  maps.addEventListener('click', function (e) {
+    e.preventDefault();
+    const url = this.href;
+    // try to open in a new tab
+    const newWin = window.open(url, '_blank', 'noopener');
+    if (!newWin) {
+      // popup blocked — navigate in same tab as fallback
+      window.location.href = url;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
